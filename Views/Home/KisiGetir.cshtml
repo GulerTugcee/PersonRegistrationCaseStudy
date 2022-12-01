@@ -1,0 +1,46 @@
+﻿
+
+<div id="update-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="standard-modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="standard-modalLabel">Person Update Page</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addForm" action="/Home/KisiGuncelle" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <input id="uid" name="id" hidden="hidden"/>
+                    <input id="uresim" name="resim" hidden="hidden"/>
+                    <div class="form-group mt-2">
+                        <label for="uad">NAME</label>
+                        <input class="form-control" name="ad" id="uad" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="usoyad">SURNAME</label>
+                        <input class="form-control" name="soyad" id="usoyad" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="ucinsiyet">GENDER</label>
+                        <input class="form-control" name="cinsiyet" id="ucinsiyet" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="utelefon">TELEPHONE</label>
+                        <input type="tel" class="form-control" name="telefon" id="utelefon" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="uemail">E-MAIL</label>
+                        <input type="email" class="form-control" name="email" id="uemail" />
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="ufile">PICTURE</label>
+                        <input type="file" class="form-control" name="file" id="ufile" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning float-start">UPDATE</button>
+                    <button type="button" class="btn btn-light float-end" data-bs-dismiss="modal">CLOSE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

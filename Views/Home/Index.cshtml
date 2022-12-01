@@ -1,0 +1,59 @@
+﻿@model List<KisiKayitMVCApp.Models.Entities.Kisi>
+@{
+    ViewData["Title"] = "Home Page";
+    int index = 0;
+}
+<div class="content-page">
+    <div class="content">
+
+
+        <div class="container-fluid">
+            <h2 class="alert alert-primary text-center mt-2">PERSONS</h2>
+            <button class="btn btn-primary w-100 mt-2" data-bs-toggle="modal" data-bs-target="#add-modal">ADD PERSON</button>
+            <hr>
+            <table class="table table-hover mt-4">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>NAME</th>
+                        <th>SURNAME</th>
+                        <th>GENDER</th>
+                        <th>TELEPHONE</th>
+                        <th>E-MAIL</th>
+                        <th>PICTURE</th>
+                        <th>TRANSACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var kisi in Model)
+                    {
+                        index++;
+                        <tr id="tr-@kisi.Id">
+                            <th>@index</th>
+                            <th>@kisi.Ad</th>
+                            <th>@kisi.Soyad</th>
+                            <th>@kisi.Cinsiyet</th>
+                            <th>@kisi.Telefon</th>
+                            <th>@kisi.Email</th>
+                            <th><img src="./files/@kisi.Resim" width="50px" height="50px" /></th>
+                            <th>
+                                <button class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#update-modal" onclick="kisiGetir(@kisi.Id)"><i class="fa fa-edit"></i></button>
+                                <button class="btn btn-outline-danger" onclick="removeKisi(@kisi.Id)"><i class="fa fa-trash"></i></button>
+                            </th>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("KisiEkle");
+@Html.Partial("KisiGetir");
+
+<script src="/js/kisiSil.js"></script>
+
+<script src="/js/kisiGetir.js"></script>
